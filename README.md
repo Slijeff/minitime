@@ -3,7 +3,7 @@ A tiny timing util that wraps around `time.perf_counter_ns()` under 40 LOC that 
 
 ## Examples
 To time a function:
-```
+```Python
 from minitime import minitime
 
 @minitime
@@ -27,7 +27,7 @@ fib(4) took 570300ns
 ```
 
 To time arbitrary code snippets:
-```
+```Python
 from minitime import minitime_context
 
 with minitime_context("code_1"):
@@ -37,7 +37,7 @@ output:
 Code[code_1] took 3865300ns
 ```
 You can even time the time function itself:
-```
+```Python
 @minitime
 @minitime
 def f():
@@ -45,7 +45,7 @@ def f():
 f()
 ```
 Or
-```
+```Python
 with minitime_context("1"):
     with minitime_context("2"):
         pass
